@@ -23,6 +23,8 @@ void IncludeInit(Picoc *pc)
     IncludeRegister(pc, "time.h", &StdTimeSetupFunc, &StdTimeFunctions[0], StdTimeDefs);
 # ifndef WIN32
     IncludeRegister(pc, "unistd.h", &UnistdSetupFunc, &UnistdFunctions[0], UnistdDefs);
+#else
+	IncludeRegister(pc, "Windows.h", NULL, &Win_Functions[0], WinDefs);
 # endif
 #endif
 }

@@ -652,4 +652,8 @@ extern const char UnistdDefs[];
 extern struct LibraryFunction UnistdFunctions[];
 void UnistdSetupFunc(Picoc *pc);
 
+/*user32.c*/
+extern const char WinDefs[];
+extern struct LibraryFunction Win_Functions[];
+void Win_MessageBoxA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
 #endif /* INTERPRETER_H */
