@@ -87,6 +87,12 @@
     <ClCompile Include="..\..\windows\user32.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\windows\debugapi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\windows\windows.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\interpreter.h">
