@@ -667,4 +667,9 @@ void Win_CreateFileA(struct ParseState *Parser, struct Value *ReturnValue, struc
 void Win_ReadFile(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
 void Win_WriteFile(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
 void Win_SetFilePointer(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_SetEndOfFile(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_MoveFileA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_FindFirstFileA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_FindNextFileA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_FindClose(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
 #endif /* INTERPRETER_H */

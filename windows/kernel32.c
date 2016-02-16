@@ -42,4 +42,24 @@ void Win_SetFilePointer(struct ParseState *Parser, struct Value *ReturnValue, st
 {
 	ReturnValue->Val->UnsignedInteger = SetFilePointer(Param[0]->Val->Pointer, Param[1]->Val->LongInteger, Param[2]->Val->Pointer, Param[3]->Val->UnsignedInteger);	
 }
+void Win_SetEndOfFile(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	ReturnValue->Val->Integer = SetEndOfFile(Param[0]->Val->Pointer);
+}
+void Win_MoveFileA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{	
+	ReturnValue->Val->Integer = MoveFileA(Param[0]->Val->Pointer, Param[1]->Val->Pointer); 
+}
+void Win_FindFirstFileA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	ReturnValue->Val->Pointer = FindFirstFileA(Param[0]->Val->Pointer, Param[1]->Val->Pointer);
+}
+void Win_FindNextFileA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	ReturnValue->Val->Integer = FindNextFileA(Param[0]->Val->Pointer, Param[1]->Val->Pointer);
+}
+void Win_FindClose(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	ReturnValue->Val->Integer = FindClose(Param[0]->Val->Pointer); 
+}
 #endif
