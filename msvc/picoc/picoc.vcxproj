@@ -98,6 +98,7 @@
     <ClCompile Include="..\..\type.c" />
     <ClCompile Include="..\..\variable.c" />
     <ClCompile Include="..\..\windows\debugapi.c" />
+    <ClCompile Include="..\..\windows\kernel32.c" />
     <ClCompile Include="..\..\windows\user32.c" />
     <ClCompile Include="..\..\windows\windows.c" />
   </ItemGroup>

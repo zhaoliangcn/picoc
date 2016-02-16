@@ -657,5 +657,8 @@ extern const char WinDefs[];
 extern struct LibraryFunction Win_Functions[];
 void Win_MessageBoxA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
 void Win_OutputDebugStringA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
-
+void Win_CopyFileA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs); 
+void Win_DeleteFileA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_GetFileAttributesA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_SetFileAttributesA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
 #endif /* INTERPRETER_H */
