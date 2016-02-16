@@ -661,4 +661,10 @@ void Win_CopyFileA(struct ParseState *Parser, struct Value *ReturnValue, struct 
 void Win_DeleteFileA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
 void Win_GetFileAttributesA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
 void Win_SetFileAttributesA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_GetFileSize(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_CloseHandle(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_CreateFileA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_ReadFile(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_WriteFile(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_SetFilePointer(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
 #endif /* INTERPRETER_H */
