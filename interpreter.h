@@ -652,7 +652,8 @@ extern const char UnistdDefs[];
 extern struct LibraryFunction UnistdFunctions[];
 void UnistdSetupFunc(Picoc *pc);
 
-/*user32.c*/
+#ifdef _WIN32
+/*user32.c debugapi.c kernel32.c windows.c*/
 extern const char WinDefs[];
 extern struct LibraryFunction Win_Functions[];
 void Win_MessageBoxA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
@@ -672,4 +673,9 @@ void Win_MoveFileA(struct ParseState *Parser, struct Value *ReturnValue, struct 
 void Win_FindFirstFileA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
 void Win_FindNextFileA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
 void Win_FindClose(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_LoadLibraryA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_GetProcAddress(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_GetLocalTime(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+void Win_GetSystemTime(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs);
+#endif
 #endif /* INTERPRETER_H */

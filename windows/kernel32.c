@@ -62,4 +62,20 @@ void Win_FindClose(struct ParseState *Parser, struct Value *ReturnValue, struct 
 {
 	ReturnValue->Val->Integer = FindClose(Param[0]->Val->Pointer); 
 }
+void Win_LoadLibraryA(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	ReturnValue->Val->Pointer = LoadLibraryA(Param[0]->Val->Pointer);
+}
+void Win_GetProcAddress(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	ReturnValue->Val->Pointer = GetProcAddress(Param[0]->Val->Pointer, Param[1]->Val->Pointer);
+}
+void Win_GetLocalTime(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	GetLocalTime((LPSYSTEMTIME)Param[0]->Val->Pointer);
+}
+void Win_GetSystemTime(struct ParseState *Parser, struct Value *ReturnValue, struct Value **Param, int NumArgs)
+{
+	GetSystemTime((LPSYSTEMTIME)Param[0]->Val->Pointer);
+}
 #endif

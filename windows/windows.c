@@ -12,6 +12,7 @@ const char WinDefs[] = "\
 					   typedef char CHAR;				\r\n\
 					   typedef unsigned short WORD;	\r\n\
 					   typedef void * HANDLE;			\r\n\
+					   typedef void * HMODULE;			\r\n\
 					   typedef unsigned int DWORD;		\r\n\
 					   #define CREATE_ALWAYS		(2) \r\n \
 					   #define OPEN_ALWAYS			(4) \r\n \
@@ -101,6 +102,16 @@ const char WinDefs[] = "\
 					   CHAR   cFileName[MAX_PATH]; \r\n\
 					   CHAR   cAlternateFileName[14]; \r\n\
 					   }WIN32_FIND_DATAA;\r\n\
+						typedef struct _SYSTEMTIME {\r\n\
+						WORD wYear;\r\n\
+						WORD wMonth;\r\n\
+						WORD wDayOfWeek;\r\n\
+						WORD wDay;\r\n\
+						WORD wHour;\r\n\
+						WORD wMinute;\r\n\
+						WORD wSecond;\r\n\
+						WORD wMilliseconds;\r\n\
+						} SYSTEMTIME;\r\n\
 ";
 
 struct LibraryFunction Win_Functions[] =
@@ -122,6 +133,10 @@ struct LibraryFunction Win_Functions[] =
 	{ Win_FindFirstFileA, "void * FindFirstFileA(char * lpFileName,WIN32_FIND_DATAA * lpFindFileData);" },
 	{ Win_FindClose, "int FindClose(void * hFindFile);" },
 	{ Win_FindNextFileA, "int FindNextFileA(void *hFindFile,WIN32_FIND_DATAA * lpFindFileData);" },
+	{ Win_LoadLibraryA, "void * LoadLibraryA(char * lpLibFileName);" },
+	{ Win_GetProcAddress, "void * GetProcAddress(char * hModule,char * lpProcName);" },
+	{ Win_GetLocalTime, "void GetLocalTime(void * lpSystemTime);" },
+	{ Win_GetSystemTime, "void GetSystemTime(void * lpSystemTime);"},
 	{ NULL,             NULL }
 };
 #endif
